@@ -21,7 +21,12 @@ public class MySQLInfo {
         this.password = password;
         this.host = host;
         this.port = port;
-        this.database = database;
+        if(database.equalsIgnoreCase("")){
+            this.database = null;
+        }else{
+            this.database = database;
+        }
+
     }
 
     public String getURLWithoutDatabase(){
